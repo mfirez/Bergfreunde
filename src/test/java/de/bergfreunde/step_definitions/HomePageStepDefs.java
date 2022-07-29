@@ -6,6 +6,7 @@ import de.bergfreunde.utilities.ConfigurationReader;
 import de.bergfreunde.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -32,6 +33,8 @@ public class HomePageStepDefs {
         System.out.println("expectedHomePageMenus = " + expectedHomePageMenus);
 
         BrowserUtils.getElementsText(new HomePage().homePageMenus_loc);
+
+        Assert.assertEquals(expectedHomePageMenus,BrowserUtils.getElementsText(new HomePage().homePageMenus_loc));
 
 
     }
